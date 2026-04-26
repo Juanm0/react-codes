@@ -1,15 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+
+import Navbar from "./components/Navbar"
+import ItemListContainer from './components/ItemListContainer'
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavbarRB from "./components/NavbarRB";
+import ItemCount from "./components/ItemCount";
 
 function App() {
-  const [count, setCount] = useState(0)
+ 
 
+console.log('App')
   return (
     <>
-      <h1> Bienvenidos a React!</h1>
+     
+     <NavbarRB/>
+     <ItemListContainer saludo="Bienvenidos a mi App!" />
+     <ItemCount stock={5}/>
     </>
   )
 }
