@@ -1,23 +1,22 @@
-
 import Navbar from "./components/Navbar"
-
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DinamicComponent from "./examples/DinamicComponent";
+import NavbarRB from "./components/NavbarRB";
 
 
 function App() {
- 
 
-console.log('App')
+
+  console.log('App')
   return (
     <>
-     
-     
-     
-     <DinamicComponent></DinamicComponent>
+
+      <NavbarRB></NavbarRB>
+      <DinamicComponent></DinamicComponent>
+      {/*  <Navbar></Navbar> */}
       {/* <ItemCount stock={5}/> */}
-     {/* <ComponentChildren>
+      {/* <ComponentChildren>
       Hola miren soy un children
      </ComponentChildren>
       <ComponentChildren>
@@ -34,7 +33,7 @@ console.log('App')
      </ComponentChildren>
      <DinamicComponent title='This is fine' description="sarasa sarasa" image='https://i.postimg.cc/9MqqkQP9/whatdoyoumeme-Deco3.png' btnText='Go' color='primary' colorCss='red'/>
       <DinamicComponent title='Amsiedad' description="sarasa sarasa sarasa" image='https://i.postimg.cc/B6DXgwsc/whatdoyoumeme-Deco1.png'btnText='Shop' color='dark' colorCss='blue'/> */}
-    
+
     </>
   )
 }
