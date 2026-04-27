@@ -13,7 +13,7 @@ function App() {
     <>
 
       <NavbarRB></NavbarRB>
-      <DinamicComponent></DinamicComponent>
+      <DinamicComponent tittle = 'Random image' description = 'this is fine' btn-text='no hace nada'/>
       {/*  <Navbar></Navbar> */}
       {/* <ItemCount stock={5}/> */}
       {/* <ComponentChildren>

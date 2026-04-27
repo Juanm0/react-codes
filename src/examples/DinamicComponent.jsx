@@ -2,20 +2,21 @@ import { Button } from 'react-bootstrap'
 import { Card } from 'react-bootstrap'
 import React from 'react'
 
-const DinamicComponent = () => {
-  return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
-  )
+const DinamicComponent = (props) => {
+    /* ponemos un unas comillas a btn-text y le asignamos un valor sin guiones (con : ) por que javascript no toma guiones ni puntos cuando se pasa por props */
+    const { tittle, description, "btn-text":btnText } = props
+    return (
+        <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src="https://picsum.photos/200" />
+            <Card.Body>
+                <Card.Title>{tittle}</Card.Title>
+                {description}
+                <Card.Text>
+                </Card.Text>
+                <Button variant="primary">{btnText}</Button>
+            </Card.Body>
+        </Card>
+    )
 }
 
 export default DinamicComponent
