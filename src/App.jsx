@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import DinamicComponent from "./examples/DinamicComponent";
 import NavbarRB from "./components/NavbarRB";
 import ItemCount from "./components/ItemCount";
+import ComponentChildren from "./examples/ComponentChildren";
 
 
 function App() {
@@ -14,6 +15,13 @@ function App() {
     <>
 
       <NavbarRB/>
+      <ComponentChildren>
+        diablo soy el children
+      </ComponentChildren>
+      <ComponentChildren>
+        <DinamicComponent/>
+        
+      </ComponentChildren>
       <DinamicComponent tittle = 'Random image' description = 'this is fine' btn-text='no hace nada'/>
       <DinamicComponent/>
       <DinamicComponent/>

@@ -29,6 +29,11 @@ const ItemCount = ({ stock }) => {
     }
 
 
+    useEffect(()=>{
+        console.log('Me ejecuto siempre')
+    })
+
+
     return (
         <div>
             <button className="btn btn-danger" onClick={restar}>-</button>
