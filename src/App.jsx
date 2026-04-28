@@ -3,6 +3,7 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DinamicComponent from "./examples/DinamicComponent";
 import NavbarRB from "./components/NavbarRB";
+import ItemCount from "./components/ItemCount";
 
 
 function App() {
@@ -12,10 +13,13 @@ function App() {
   return (
     <>
 
-      <NavbarRB></NavbarRB>
+      <NavbarRB/>
       <DinamicComponent tittle = 'Random image' description = 'this is fine' btn-text='no hace nada'/>
+      <DinamicComponent/>
+      <DinamicComponent/>
+      <DinamicComponent/>
       {/*  <Navbar></Navbar> */}
-      {/* <ItemCount stock={5}/> */}
+      <ItemCount stock={5}/>
       {/* <ComponentChildren>
       Hola miren soy un children
      </ComponentChildren>
