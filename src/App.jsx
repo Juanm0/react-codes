@@ -10,7 +10,6 @@ import ComponentChildren from "./examples/ComponentChildren";
 function App() {
 
 
-  console.log('App')
   return (
     <>
 

@@ -29,9 +29,9 @@ const ItemCount = ({ stock }) => {
     }
 
 
-    useEffect(()=>{
+  /*   useEffect(()=>{
         console.log('Me ejecuto siempre')
-    })
+    }) */
 
 
     return (
