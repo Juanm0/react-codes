@@ -5,6 +5,7 @@ import DinamicComponent from "./examples/DinamicComponent";
 import NavbarRB from "./components/NavbarRB";
 import ItemCount from "./components/ItemCount";
 import ComponentChildren from "./examples/ComponentChildren";
+import ItemListContainer from "./components/ItemListContainer";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <>
 
       <NavbarRB/>
+      <ItemListContainer saludo="hola"/>
       <ComponentChildren>
         diablo soy el children
       </ComponentChildren>
