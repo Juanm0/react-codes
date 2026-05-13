@@ -5,7 +5,7 @@ const FetchContainer = () => {
   const [data, setData] = useState([])
   useEffect(() => {
     //1. Pido datos
-    fetch('https://pokeapi.co/api/v2/pokemon/ditto')
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=50')
       //2. Traduzco
       .then((response) => response.json())
       //3. Guardo los datos
