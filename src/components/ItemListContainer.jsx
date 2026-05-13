@@ -3,7 +3,7 @@ import { getProducts } from "../mock/asyncMock"
 import ItemList from "./ItemList"
 
 const ItemListContainer = ({ saludo }) => {
-const [data,setData]=useState([])
+const [data,setData] = useState([])
 
     useEffect(() => {
         getProducts()//pide data
