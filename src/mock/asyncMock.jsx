@@ -3,7 +3,7 @@ const productos = [
     {
         id: '01',
         name: "Random 1",
-        descrption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas officia tempora distinctio pariatur porro sint ab optio veritatis provident deserunt, quos labore fugiat magnam possimus voluptas! Quos commodi recusandae officia.",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas officia tempora distinctio pariatur porro sint ab optio veritatis provident deserunt, quos labore fugiat magnam possimus voluptas! Quos commodi recusandae officia.",
         stock: 50,
         price: 15000,
         category: "nuevos",
@@ -12,7 +12,7 @@ const productos = [
     {
         id: '02',
         name: "Random 2",
-        descrption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas officia tempora distinctio pariatur porro sint ab optio veritatis provident deserunt, quos labore fugiat magnam possimus voluptas! Quos commodi recusandae officia.",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas officia tempora distinctio pariatur porro sint ab optio veritatis provident deserunt, quos labore fugiat magnam possimus voluptas! Quos commodi recusandae officia.",
         stock: 30,
         price: 25000,
         category: "mas vendidos",
@@ -21,7 +21,7 @@ const productos = [
     {
         id: '03',
         name: "Random 3",
-        descrption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas officia tempora distinctio pariatur porro sint ab optio veritatis provident deserunt, quos labore fugiat magnam possimus voluptas! Quos commodi recusandae officia.",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas officia tempora distinctio pariatur porro sint ab optio veritatis provident deserunt, quos labore fugiat magnam possimus voluptas! Quos commodi recusandae officia.",
         stock: 40,
         price: 22000,
         category: "ofertas",
@@ -30,7 +30,7 @@ const productos = [
     {
         id: '04',
         name: "Random 4",
-        descrption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas officia tempora distinctio pariatur porro sint ab optio veritatis provident deserunt, quos labore fugiat magnam possimus voluptas! Quos commodi recusandae officia.",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas officia tempora distinctio pariatur porro sint ab optio veritatis provident deserunt, quos labore fugiat magnam possimus voluptas! Quos commodi recusandae officia.",
         stock: 60,
         price: 12000,
         category: "nike",
@@ -39,6 +39,7 @@ const productos = [
 ]
 /* exportamos solo la promesa, no el array de productos, para simular un delay */
 let error = false
+
 export const getProducts = () =>{
     return new Promise ((resolve, reject)=>{
         setTimeout(()=>{
@@ -52,3 +53,19 @@ export const getProducts = () =>{
         },2000)
     })
 }
+
+export const getOneProduct = (id) =>{
+    return new Promise ((resolve, reject)=>{
+        setTimeout(()=>{
+            if(error){
+                //rechazar
+                reject('Hubo un error intente mas tarde')
+            }else{
+                //resolver
+                let found = productos.find((item)=> item.id===id)
+                resolve(found)
+            }
+        },2000)
+    })
+}
+

@@ -7,6 +7,7 @@ import ItemCount from "./components/ItemCount";
 import ComponentChildren from "./examples/ComponentChildren";
 import ItemListContainer from "./components/ItemListContainer";
 import FetchContainer from "./examples/FetchContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 
 
 function App() {
@@ -15,27 +16,17 @@ function App() {
   return (
     <>
 
-      <NavbarRB/>
-      <ItemListContainer saludo="hola"/>
-      <FetchContainer/>
+      <NavbarRB />
+
+      <FetchContainer />
       <ComponentChildren>
         diablo soy el children
+        <DinamicComponent tittle='Random image' description='this is fine' btn-text='no hace nada' />
       </ComponentChildren>
 
-      
-      <ComponentChildren>
-        <DinamicComponent/>
-        
-      </ComponentChildren>
-      <DinamicComponent tittle = 'Random image' description = 'this is fine' btn-text='no hace nada'/>
-      <DinamicComponent/>
-      <DinamicComponent/>
-      <DinamicComponent/>
-     
+      <ItemDetailContainer />
 
-
-      <ItemCount stock={5}/>
-      
+      <ItemListContainer saludo="Saludo desde el ItemListContainer" />
     </>
   )
 }
