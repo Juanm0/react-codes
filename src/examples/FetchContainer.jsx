@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+/* import React, { useEffect, useState } from 'react'
 import FetchList from './FetchList'
-/* import {useFetch} from '../hooks/useFetch' */
+import {useFetch} from '../hooks/useFetch' 
 
 const FetchContainer = () => {
-  /* acá usamos un custom hook pero como es complicado mejor no lo usamos
+   acá usamos un custom hook pero como es complicado mejor no lo usamos
 const {data, error, loading} = useFetch('https://pokeapi.co/api/v2/pokemon?limit=50')
-*/
+
   const [data, setData] = useState([])
    useEffect(() => {
     //1. Pido datos
@@ -18,7 +18,7 @@ const {data, error, loading} = useFetch('https://pokeapi.co/api/v2/pokemon?limit
       .catch((error) => console.log(error))
   }, [])
 
-  /*console.log({data, error, loading});  */
+  /*console.log({data, error, loading});  
   
   console.log(data); 
 
@@ -27,6 +27,36 @@ const {data, error, loading} = useFetch('https://pokeapi.co/api/v2/pokemon?limit
       <FetchList data={data} />
     </div>
   )
+}
+
+export default FetchContainer */
+
+import React from 'react'
+import FetchList from './FetchList'
+import useFetch from '../hooks/useFetch'
+
+const FetchContainer = () => {
+
+    const { data, loading, error } =
+        useFetch('https://pokeapi.co/api/v2/pokemon?limit=50')
+
+    if (loading) {
+        return <h1>Cargando...</h1>
+    }
+
+    if (error) {
+        return <h1>Error al traer los Pokémon</h1>
+    }
+
+    return (
+        <div>
+
+            <h1>Pokédex</h1>
+
+            <FetchList data={data} />
+
+        </div>
+    )
 }
 
 export default FetchContainer
