@@ -1,15 +1,24 @@
 import { useEffect, useState } from "react"
 import { getProducts } from "../mock/asyncMock"
 import ItemList from "./ItemList"
+import { useParams } from "react-router-dom"
 
 const ItemListContainer = ({ saludo }) => {
 const [data,setData] = useState([])
+const {type}= useParams()
 
     useEffect(() => {
         getProducts()//pide data
-            .then((res) => setData(res))//guarda data
+            .then((res) => {
+                if(type){
+                    //filtro
+                    setData(res.filter((prod)=> prod.category === type))
+                }else{
+                    setData(res)
+                }
+            })//guarda data
             .catch((error) => console.log(error))//atrapa el error
-    }, [])//se ejecuta una sola vez
+    }, [type])//tiene que estar a la escucha del cambio de categoria
     console.log('ItemListContainer', data)
 
     return (
