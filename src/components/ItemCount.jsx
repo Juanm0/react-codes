@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react'
 
 
-const ItemCount = ({ stock }) => {
+const ItemCount = ({ stock , onAdd}) => {
     // const [variableDeEstado, funcionModificadoraDelEstado] = useState(valorInicial)
     const [count, setCount] = useState(1)
-    const [compra, setCompra] = useState(false)
 
     /* console.log('ItemCount') */
 
@@ -25,7 +24,7 @@ const ItemCount = ({ stock }) => {
 
     const purchase = () => {
         /* Cambia el estado de la compra de su natural (false) a su contrario (true) */
-        setCompra(!compra)
+       onAdd(count)
     }
 
 
