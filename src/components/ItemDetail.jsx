@@ -1,18 +1,22 @@
 import React from 'react'
 import ItemCount from './ItemCount'
+// para usar un contexto debo importar 2 cosas, 1ro el hook para usar contexto (usecontext) y 2do que contexto quiero usar (cartcontext, en este caso)
+import { useContext } from 'react'
+import { CartContext } from '../context/CartContext'
 
-const ItemDetail = ({detalle}) => {
-  const onAdd = (cantidad)=>{
+const ItemDetail = ({ detalle }) => {
+  const { cart } = useContext(CartContext)
+  const onAdd = (cantidad) => {
     alert(`Agregaste al carrito ${cantidad} de unidades de ${detalle.name}`)
   }
   return (
     <div>
-        <h2>Bienvenidos al detalle de {detalle.name}</h2>
-        <img width='300px' src={detalle.img} alt={detalle.name} />
-        <p>{detalle.description}</p>
-        <p>${detalle.price},00</p>
-        <p>unidades disponibles:{detalle.stock}</p>
-        <ItemCount stock={detalle.stock} onAdd={onAdd}/>
+      <h2>Bienvenidos al detalle de {detalle.name}</h2>
+      <img width='300px' src={detalle.img} alt={detalle.name} />
+      <p>{detalle.description}</p>
+      <p>${detalle.price},00</p>
+      <p>unidades disponibles:{detalle.stock}</p>
+      <ItemCount stock={detalle.stock} onAdd={onAdd} />
     </div>
   )
 }
