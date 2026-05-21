@@ -18,7 +18,7 @@ function App() {
       <NavbarRB/>
       <Routes>
         <Route path='/' element={<ItemListContainer saludo="Saludo desde el ItemListContainer" />}/>
-        <Route path='/category/:type' element={<ItemListContainer saludo="Estamos en las categorias" />}/>
+        <Route path='/category/:type' element={<ItemListContainer saludo="Estamos en las categorias " />}/>
         <Route path='/item/:id' element={<ItemDetailContainer />}/>
         <Route path='*' element={<Error/>}/>
       </Routes>
