@@ -5,9 +5,9 @@ import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
 
 const ItemDetail = ({ detalle }) => {
-  const { cart } = useContext(CartContext)
+  const { cart, addItem} = useContext(CartContext)
   const onAdd = (cantidad) => {
-    alert(`Agregaste al carrito ${cantidad} de unidades de ${detalle.name}`)
+    addItem(detalle,cantidad)
   }
   return (
     <div>
