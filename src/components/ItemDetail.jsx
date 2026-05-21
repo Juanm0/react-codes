@@ -10,7 +10,13 @@ const ItemDetail = ({ detalle }) => {
     addItem(detalle,cantidad)
   }
   return (
-    <div>
+     <div style={{
+        textAlign: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '10px'
+      }}>
       <h2>Bienvenidos al detalle de {detalle.name}</h2>
       <img width='300px' src={detalle.img} alt={detalle.name} />
       <p>{detalle.description}</p>
