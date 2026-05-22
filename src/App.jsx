@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Error from './components/Error';
 //importamos en app al proveedor para dar acceso al contexto
 import { CartProvider } from './context/CartContext';
+import CartContainer from './components/CartContainer';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path='/' element={<ItemListContainer saludo="Saludo desde el ItemListContainer" />}/>
         <Route path='/category/:type' element={<ItemListContainer saludo="Estamos en las categorias " />}/>
         <Route path='/item/:id' element={<ItemDetailContainer />}/>
+        <Route path='/cart' element={<CartContainer/>}/>
         <Route path='*' element={<Error/>}/>
       </Routes>
       </CartProvider>
