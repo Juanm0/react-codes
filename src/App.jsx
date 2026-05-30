@@ -1,31 +1,34 @@
+import ItemListContainer from './components/ItemListContainer'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarRB from "./components/NavbarRB";
-import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Error from './components/Error';
-//importamos en app al proveedor para dar acceso al contexto
+//3. IMPORTAMOS EN APP AL PROVEDDOR PARA DAR ACCESO AL CONTEXTO
 import { CartProvider } from './context/CartContext';
 import CartContainer from './components/CartContainer';
+import Checkout from './components/Checkout';
 
 function App() {
+ 
 
-
+console.log('App')
   return (
     <>
     <BrowserRouter>
-      <CartProvider>
-      <NavbarRB/>
-      <Routes>
-        <Route path='/' element={<ItemListContainer saludo="Saludo desde el ItemListContainer" />}/>
-        <Route path='/category/:type' element={<ItemListContainer saludo="Estamos en las categorias " />}/>
-        <Route path='/item/:id' element={<ItemDetailContainer />}/>
-        <Route path='/cart' element={<CartContainer/>}/>
-        <Route path='*' element={<Error/>}/>
-      </Routes>
-      </CartProvider>
-      </BrowserRouter>
+        <CartProvider>
+        <NavbarRB/>
+        <Routes>
+          <Route path='/' element={ <ItemListContainer saludo="Bienvenidos a mi App!" />} />
+          <Route path='/category/:type' element={ <ItemListContainer saludo="Categoria " />} />
+          <Route path='/item/:id' element={ <ItemDetailContainer/>}/>
+          <Route path='/cart' element={<CartContainer/>}/>
+          <Route path='/checkout' element={<Checkout/>}/>
+          <Route path='*' element={<Error/>}/>
+        </Routes>
+        </CartProvider>
+    </BrowserRouter>
     </>
   )
 }
